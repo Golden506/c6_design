@@ -1,121 +1,83 @@
-while true do
-  puts"If an individual's close family was diagnosed with clinical depression, would they be at greater risk of depression?"
-  puts"A: No, their risk would be similar to everyone else.\nB: Yes, they would almost certainly be afflicted. \nC: Yes, but they might not be afflicted."
-  input = gets.chomp
-  input.downcase!
-  case
-  when input == "c"
-    a1 = true
-    break
-  when
-    input == "a" || input == "b"
-    a1 = false
-    break
-  else
-    puts "Unrecognized input."
-  end
+class Question
+    def text(s)
+        @@question = s
+    end
+    def ans(a, b, c = nil, d = nil)
+        @@answers = [a, b, c, d,]
+    end
+    def cor(x)
+        #Note: This method takes a number. That number is the index of the correct answer.
+        @@correct_answer = x
+    end
+    def ask
+        while true do
+            puts"#{@@question}"
+            @@answers.each do |x|
+              @@answers.delete(x) if x == nil
+            end
+            puts"#{@@answers}"
+            input = gets.chomp
+            input.downcase!
+            @@poss = ["a","b","c","d"]
+                if input == @@poss[@@correct_answer]
+                    return true
+                elsif input == "a" || input == "b" || input == "c" || input == "d"
+                    return false
+                else
+                    puts "Unrecognized input."
+                end
+        end
+    end
 end
-while true do
-  puts"Which of the following answers is the most common effect of depression?"
-  puts"A: Inability to think clearly \nB: Lethargy and loss of interest \nC: Distrust of friends and family \nD: Habitual substance abuse"
-  input = gets.chomp
-  input.downcase!
-  case
-  when input == "b"
-    a2 = true
-    break
-  when
-  input == "a" || input == "d" || input == "d"
-    a2 = false
-    break
-  else
-    puts "Unrecognized input."
-  end
-end
-while true do
-  puts"True or false: Men are more likely to be depressed than women."
-  puts"A: True\nB: False"
-  input = gets.chomp
-  input.downcase!
-  case
-  when input == "b"
-    a3 = true
-    break
-  when
-  input == "a"
-    a3 = false
-    break
-  else
-    puts "Unrecognized input."
-  end
-end
-while true do
-  puts"Is short term sadness/grief considered clinical depression?"
-  puts"A: Yes\nB: No"
-  input = gets.chomp
-  input.downcase!
-  case
-  when input == "b"
-    a4 = true
-    break
-  when
-  input == "a"
-    a4 = false
-    break
-  else
-    puts "Unrecognized input."
-  end
-end
-while true do
-  puts"Can depression be influenced by environmental conditions?"
-  puts"A: Yes\nB: No"
-  input = gets.chomp
-  input.downcase!
-  case
-  when input == "b"
-    a5 = true
-    break
-  when
-  input == "a"
-    a5 = false
-    break
-  else
-    puts "Unrecognized input."
-  end
-end
-while true do
-  puts"Which of these is not a possible cause of depression?"
-  puts"A: Excess Vitamin D and/or vitamin E\nB: Faulty mood regulation by the brain\nC: Unhealthy diet"
-  input = gets.chomp
-  input.downcase!
-  case
-  when input == "a"
-    a6 = true
-    break
-  when
-  input == "b" || input == 'c'
-    a6 = false
-    break
-  else
-    puts "Unrecognized input."
-  end
-end
-while true do
-  puts"Which of these is not a common effect of depression?"
-  puts"A: Excessive tiredness or insomnia\nB: Suicidal thoughts\nC: Weight gain/loss\nD: Difficulty empathizing"
-  input = gets.chomp
-  input.downcase!
-  case
-  when input == "d"
-    a7 = true
-    break
-  when
-  input == "b" || input == 'c' || input == "a"
-    a7 = false
-    break
-    else
-    puts "Unrecognized input."
-  end
-end
+=begin
+TEMPLATE:
 
+q_ = Question.new
+q_.text("_")
+q_.ans("_","_","_","_")
+q_.cor(_)
+a_ = q_.ask
 
+=end
+
+q1 = Question.new
+q1.text("If an individual's close family was diagnosed with clinical depression, would they be at greater risk of depression?")
+q1.ans("A: No, their risk would be similar to everyone else.", "B: Yes, they would almost certainly be afflicted.", "C: Yes, but they might not be afflicted.", "D: No, they could not be affected.")
+q1.cor(2)
+a1 = q1.ask
+
+q2 = Question.new
+q2.text("Which of the following answers is the most common effect of depression?")
+q2.ans("A: Inability to think clearly", "B: Lethargy and loss of interest", "C: Distrust of friends and family", "D: Habitual substance abuse")
+q2.cor(1)
+a2 = q2.ask
+
+q3 = Question.new
+q3.text("True or false: Men are more likely to be depressed than women.")
+q3.ans("A: True","B: False")
+q3.cor(1)
+a3 = q3.ask
+
+q4 = Question.new
+q4.text("Is short term sadness/grief considered clinical depression?")
+q4.ans("A: Yes","B: No")
+q4.cor(1)
+a4 = q4.ask
+
+q5 = Question.new
+q5.text("Can depression be influenced by environmental conditions?")
+q5.ans("A: Yes","B: No")
+q5.cor(0)
+a5 = q5.ask
+
+q6 = Question.new
+q6.text("Which of these is not a possible cause of depression?")
+q6.ans("A: Excess Vitamin D and/or vitamin E","B: Faulty mood regulation by the brain","C: Unhealthy diet")
+q6.cor(0)
+a6 = q6.ask
+
+q7 = Question.new
+q7.text("Which of these is not a common effect of depression?")
+q7.ans("A: Excessive tiredness or insomnia","B: Suicidal thoughts","C: Weight gain/loss","D: Difficulty empathizing")
+q7.cor(3)
+a7 = q7.ask
