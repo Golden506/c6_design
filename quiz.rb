@@ -132,7 +132,7 @@ a14 = q14.ask
 
 q15 = Question.new
 q15.text("How could seasonal affective disorder be treated?")
-q15.ans("Vaccines","Light box","Staying in bed","Eating healthier")
+q15.ans("A: Vaccines","B: Light box","C: Staying in bed","D: Eating healthier")
 q15.cor(1)
 a15 = q15.ask
 
@@ -144,6 +144,29 @@ a16 = q16.ask
 
 q17 = Question.new
 q17.text("Which of these factors is linked to the severity of seasonal affective disorder?")
-q17.ans("Race","Hormonal index","Location")
+q17.ans("A: Race","B: Hormonal index","C: Location")
 q17.cor(2)
 a17 = q17.ask
+
+#Depression grading
+
+#Bipolar grading
+
+#SAD grading
+unless a17 || a16
+    unless a13
+        puts "There are a lot of different factors going into who gets SAD and why. These resources will walk you through the causes and risks of SAD: \nhttps://www.nimh.nih.gov/health/topics/seasonal-affective-disorder/index.shtml \nhttps://www.medicalnewstoday.com/articles/10306.php"
+    else
+        puts "You should know that different people are more or less likely to be affected by SAD, and will be affected in different ways. Women are four times more likely to be diagnosed with SAD than men, and there is significant variation in the severity of SAD based off of location. Individuals that live in places with little sunlight will likely have more severe symptoms, and will benefit even greater from a light box. The following URL has lots of information about the risk factors of SAD: \nhttps://www.nimh.nih.gov/health/topics/seasonal-affective-disorder/index.shtml"
+    end
+else
+    unless a13
+        puts "While scientists are not entirely sure what the precise cause of SAD is, it is suspected that the reduced sunlight levels can affect one's circadian rhythm, causing SAD. Altered serotonin and melatonin levels are also suspected to be a cause. Learn more here: \nhttps://www.mayoclinic.org/diseases-conditions/seasonal-affective-disorder/diagnosis-treatment/drc-20364722"
+    end
+end
+unless a14
+    puts "The effects of SAD usually manifest in the feelings and behavior of afflicted individuals, and not often in physical changes. Social withdrawl, alongside lethargy, persistent feelings of sadness, as well as weight change and difficulty concentrating are common effects of SAD. Learn more here: \nhttps://www.nimh.nih.gov/health/topics/seasonal-affective-disorder/index.shtml"
+end
+unless a15
+    puts "While getting lots of sleep and eating healthily may bring some relief from symptoms, the use of a light box(which can simply be purchased with no prescription required) is a common treatment for the condition. Learn more about getting treatment here: \nhttps://www.mayoclinic.org/diseases-conditions/seasonal-affective-disorder/diagnosis-treatment/drc-20364722"
+end
