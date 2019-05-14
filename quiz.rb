@@ -87,7 +87,7 @@ a7 = q7.ask
 q8 = Question.new
 q8.text("Can depression be treated?")
 q8.ans("A: Yes", "B: No")
-q8.cor(1)
+q8.cor(0)
 a8 = q8.ask
 
 #Bipolar Questions
