@@ -85,7 +85,7 @@ q7.cor(3)
 a7 = q7.ask
 
 #Bipolar Questions
-
+=begin
 q8 = Question.new
 q8.text("What are the symptoms of bipolar disorder?")
 q8.ans("A: Extreme changes in mood over time","B: Paralysis","C: Seizures","D: Temporary blindness")
@@ -115,6 +115,7 @@ q12.text("What could not be a cause of bipolar disorder?")
 q12.ans("A: Genetic vulnerability","B: Biological traits","C: Perennial lobe trauma","D: Brain-chemical imbalance")
 q12.cor(2)
 a12 = q12.ask
+=end
 
 #SAD questions
 
@@ -149,24 +150,51 @@ q17.cor(2)
 a17 = q17.ask
 
 #Depression grading
+if !a6 && !a1 && !a3
+  puts "There are a lot of different things that go into why a given person is depressed. Enviornmental and genetic conditions are a large factor, and women are more likely to suffer from depression than men. Read more here: \nhttps://www.health.harvard.edu/mind-and-mood/what-causes-depression\nhttps://www.mentalhelp.net/articles/lifestyle-factors-and-environmental-causes-of-major-depression/"
+  puts ""
+elsif !a3
+  puts "You should know that women are much more likely to be depressed than women. Read more here: \nhttps://www.mayoclinic.org/diseases-conditions/depression/in-depth/depression/art-20047725"
+  puts ""
+elsif !a1 || !a6
+  puts "There are many factors that go into why someone could be depressed. Having close family diagnosed with depression raises the chances, although an individual still might not be afflicted."
+  puts ""
+end
 
-#Bipolar grading
+unless a5
+  "It's a common myth that depression is caused by either entirely genetic or entirely enviornmental factors, however depression can be caused by both. Read more on the enviormental causes of depression here: \nhttps://www.mentalhelp.net/articles/lifestyle-factors-and-environmental-causes-of-major-depression/"
+  puts ""
+end
+
+unless a2 || a7
+  puts "Depression can cause many negative effects. Lethargy, loss of interest, weight gain or loss, social isolation, and trouble sleeping are all common effects. Read more here: \nhttps://www.mentalhelp.net/articles/lifestyle-factors-and-environmental-causes-of-major-depression/"
+  puts ""
+end
 
 #SAD grading
 unless a17 || a16
     unless a13
         puts "There are a lot of different factors going into who gets SAD and why. These resources will walk you through the causes and risks of SAD: \nhttps://www.nimh.nih.gov/health/topics/seasonal-affective-disorder/index.shtml \nhttps://www.medicalnewstoday.com/articles/10306.php"
+        puts ""
     else
         puts "You should know that different people are more or less likely to be affected by SAD, and will be affected in different ways. Women are four times more likely to be diagnosed with SAD than men, and there is significant variation in the severity of SAD based off of location. Individuals that live in places with little sunlight will likely have more severe symptoms, and will benefit even greater from a light box. The following URL has lots of information about the risk factors of SAD: \nhttps://www.nimh.nih.gov/health/topics/seasonal-affective-disorder/index.shtml"
+        puts ""
     end
 else
     unless a13
         puts "While scientists are not entirely sure what the precise cause of SAD is, it is suspected that the reduced sunlight levels can affect one's circadian rhythm, causing SAD. Altered serotonin and melatonin levels are also suspected to be a cause. Learn more here: \nhttps://www.mayoclinic.org/diseases-conditions/seasonal-affective-disorder/diagnosis-treatment/drc-20364722"
+        puts ""
     end
 end
+
 unless a14
     puts "The effects of SAD usually manifest in the feelings and behavior of afflicted individuals, and not often in physical changes. Social withdrawl, alongside lethargy, persistent feelings of sadness, as well as weight change and difficulty concentrating are common effects of SAD. Learn more here: \nhttps://www.nimh.nih.gov/health/topics/seasonal-affective-disorder/index.shtml"
+    puts ""
 end
 unless a15
     puts "While getting lots of sleep and eating healthily may bring some relief from symptoms, the use of a light box(which can simply be purchased with no prescription required) is a common treatment for the condition. Learn more about getting treatment here: \nhttps://www.mayoclinic.org/diseases-conditions/seasonal-affective-disorder/diagnosis-treatment/drc-20364722"
+    puts ""
 end
+
+
+
