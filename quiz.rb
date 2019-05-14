@@ -84,6 +84,12 @@ q7.ans("A: Excessive tiredness or insomnia","B: Suicidal thoughts","C: Weight ga
 q7.cor(3)
 a7 = q7.ask
 
+q8 = Question.new
+q8.text("Can depression be treated?")
+q8.ans("A: Yes", "B: No")
+q8.cor(1)
+a8 = q8.ask
+
 #Bipolar Questions
 =begin
 q8 = Question.new
@@ -196,5 +202,23 @@ unless a15
     puts ""
 end
 
+#Insights
+puts ""
 
+causes = [a1, a3, a5, a6, a13, a16, a17]
+temp = causes.count(true)
+unless temp > 5
+    puts "We've noticed that you aren't very familiar with the causes of and the circumstances in which certain mood disorders develop.\n"
+end
 
+effects = [a2, a7, a14]
+temp = effects.count(true)
+unless temp > 2
+    puts "We've noticed that you aren't very familar with the effects and symptoms of mood disorders.\n"
+end
+
+treatments = [a8, a15]
+temp = treatments.count(true)
+unless temp == 2
+    puts "We've noticed that you aren't vey familar with the treatment of mood disorders."
+end
