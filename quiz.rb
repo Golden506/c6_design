@@ -42,6 +42,8 @@ a_ = q_.ask
 
 #Depression Questions:
 
+puts "The Health Knowledge Diagnostic Test (HKDT) is an exam created to combat the health education problem in America. The test consists of multiple choice and yes/no questions. At its current status, the HKDT focuses on the topic of depression and mood disorders. Input either A, B, C, or D, depending on which options are available and which options you think are correct.\n"
+puts ""
 q1 = Question.new
 q1.text("If an individual's close family was diagnosed with clinical depression, would they be at greater risk of depression?")
 q1.ans("A: No, their risk would be similar to everyone else.", "B: Yes, they would almost certainly be afflicted.", "C: Yes, but they might not be afflicted.", "D: No, they could not be affected.")
@@ -155,6 +157,9 @@ q17.ans("A: Race","B: Hormonal index","C: Location")
 q17.cor(2)
 a17 = q17.ask
 
+puts "After analyzing the results of the test, we have several insights into areas which your knowledge is incomplete. Please read through the following facts, and consider checking the linked resources if you would like to learn more: "
+puts "\n"
+
 #Depression grading
 if !a6 && !a1 && !a3
   puts "There are a lot of different things that go into why a given person is depressed. Enviornmental and genetic conditions are a large factor, and women are more likely to suffer from depression than men. Read more here: \nhttps://www.health.harvard.edu/mind-and-mood/what-causes-depression\nhttps://www.mentalhelp.net/articles/lifestyle-factors-and-environmental-causes-of-major-depression/"
@@ -207,18 +212,18 @@ puts ""
 
 causes = [a1, a3, a5, a6, a13, a16, a17]
 temp = causes.count(true)
-unless temp > 5
+unless temp > 4
     puts "We've noticed that you aren't very familiar with the causes of and the circumstances in which certain mood disorders develop.\n"
 end
 
 effects = [a2, a7, a14]
 temp = effects.count(true)
-unless temp > 2
+unless temp > 1
     puts "We've noticed that you aren't very familar with the effects and symptoms of mood disorders.\n"
 end
 
 treatments = [a8, a15]
 temp = treatments.count(true)
-unless temp == 2
-    puts "We've noticed that you aren't vey familar with the treatment of mood disorders."
+unless temp > 0
+    puts "We've noticed that you aren't very familar with the treatment of mood disorders."
 end
