@@ -157,6 +157,58 @@ q17.ans("A: Race","B: Hormonal index","C: Location")
 q17.cor(2)
 a17 = q17.ask
 
+File.open("results.md", "w+") do |file|
+    file.puts("## What **you** need to know.")
+    file.puts("This article has been automatically generated and tailored to your needs based off of the results of the HKD you just took.")
+    depression = [a1, a2, a3, a4, a5, a6, a7, a8]
+    temp = depression.count(true)
+    unless temp > 7
+        file.puts("### Depression")
+        unless a1
+            file.puts("[Studies](https://www.healio.com/psychiatry/depression/news/online/%7B133607cf-45bc-40a2-89af-80a80a4d29e3%7D/family-history-of-depression-doubles-risk-for-depression) have shown that the biological family of an individual affects that individual’s risk of being afflicted by depression - children and grandchildren of people with depression are more likely to be afflicted by it.(One [study](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3693404/#bib5) found the heritability rate to be around 40%, and [another](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3919201/) estimated it at 37%.)")
+        end
+        unless a2 && a7
+            file.puts("\nDepression can have many different symptoms, the degree of which will vary on a case-by-case basis. However, there are many [common symptoms](https://www.webmd.com/depression/guide/depression-symptoms-causes#1) nearly everyone afflicted by major depressive disorder will have. Lethargy(tiredness and excessive fatigue.) is very common, as is anxiety, feeling worthless or guilty, suicidal thoughts, insomnia, weight change, and a loss of interest in previously enjoyed activities. While substance abuse or other issues may arise as a consequence of these symptoms, they are not typically considered symptoms of depression.")
+        end
+        unless a3
+            file.puts("\nIt is a common myth that only women are affected by depression. Everyone can be affected, women are just [more likely to be](https://www.mayoclinic.org/diseases-conditions/depression/in-depth/depression/art-20047725). Differences in both the hormones and cultural expectations between men and women are believed to be a cause for this.")
+        end
+        unless a4
+            file.puts("\nWhile the line between everyday sadness and clinical depression is blurry to be sure, it is generally agreed that there is a difference between the two. Feelings of sadness, worthlessness, or hopelessness lasting longer than two weeks may be a sign of depression. When you are just sad, you may be able to still find joy in some moments, but clinical depression usually affects every aspect of one’s life. The [DSM-5 Criteria](https://www.psycom.net/depression-definition-dsm-5-diagnostic-criteria/) can be used to help detect and diagnose depression.")
+        end
+        unless a5 && a6
+            file.puts("\nDepression is caused by a myriad of factors both environmental and genetic. [Environmental causes](https://www.mentalhelp.net/articles/lifestyle-factors-and-environmental-causes-of-major-depression/) will vary greatly, but substance abuse, social isolation, grief or bereavement, lack of sleep, lack of exercise, and lack of a good diet are often cited causes.")
+        end
+        unless a8
+            file.puts("\nDepression can be treated. There is a wide selection of treatment options, medication and talking with a therapist are the most effective. These two forms of treatment are accessible through a doctor and diagnosis. A common misconception about anti-depressants is that it turns you into an emotionless, braindead corpse. [You will see a change in depression, not your actual self.](https://www.webmd.com/depression/features/coping-with-side-effects-of-depression-treatment#1) Although the treatment process may take time, depending on the severity of the patient’s depression. ")
+        end
+    end
+    sads = [a13, a14, a15, a16, a7]
+    temp = sads.count(true)
+    unless temp > 4
+        file.puts("### Seasonal Affective Disorder")
+        unless a13
+            file.puts("\nThere are many [suspected reasons](https://www.mayoclinic.org/diseases-conditions/seasonal-affective-disorder/symptoms-causes/syc-20364651) why the change of the seasons brings on seasonal depression for some people. Unhealthy changes in one’s circadian rhythm due to the change in light levels is one such reason, as is a deficit in vitamin D. Changes in the body’s level of serotonin and melatonin may also be a cause.")
+        end
+        unless a14
+           file.puts("\nThe [symptoms](https://www.mayoclinic.org/diseases-conditions/seasonal-affective-disorder/symptoms-causes/syc-20364651) of SAD are similar to that of major depressive disorder, with lethargy, loss of interest in previously enjoyed activities, insomnia, weight change and hopeless feelings being very common.")
+        end
+        unless a15
+            file.puts("\nThere are many different [treatments](https://www.mayoclinic.org/diseases-conditions/seasonal-affective-disorder/diagnosis-treatment/drc-20364722) for seasonal depression. Using a light box every morning for 20 minutes or more can be markedly effective(without requiring any sort of prescription), as can brightening your living space and making an effort to get more sunlight each day. Medication, such as [vitamin D supplements](http://www.jlgh.org/Past-Issues/Volume-1---Issue-3/Vitamin-D-And-Mood-Disorders.aspx) or antidepressants may also help. Therapy, or simply connecting with friends and family, can provide some relief from symptoms.")
+        end
+        unless a16
+           file.puts("\nSimilarly to major depressive disorder, women are [more likely to be affected](https://www.nimh.nih.gov/health/topics/seasonal-affective-disorder/index.shtml#part_152432) by SAD than men, although men can still be affected. ")
+        end
+        unless a17
+            file.puts("\nTThe experience of individuals with SAD will [vary based off of their location](https://online.regiscollege.edu/blog/seasonal-affective-disorder/) due to differences in temperature, available light, and weather. Those with winter depression are generally happier living close to the equator, and those with summer depression will be typically happier living far from it. Other factors based off of location(such as amount of precipitation) can also affect the severity of seasonal depression.")
+        end
+    end
+end
+
+
+=begin
+
+
 puts "After analyzing the results of the test, we have several insights into areas which your knowledge is incomplete. Please read through the following facts, and consider checking the linked resources if you would like to learn more: "
 puts "\n"
 
@@ -227,3 +279,5 @@ temp = treatments.count(true)
 unless temp > 0
     puts "We've noticed that you aren't very familar with the treatment of mood disorders."
 end
+
+=end
