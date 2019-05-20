@@ -42,7 +42,7 @@ a_ = q_.ask
 
 #Depression Questions:
 
-puts "The Health Knowledge Diagnostic Test (HKDT) is an exam created to combat the health education problem in America. The test consists of multiple choice and yes/no questions. At its current status, the HKDT focuses on the topic of depression and mood disorders. Input either A, B, C, or D, depending on which options are available and which options you think are correct.\n"
+puts "The Health Knowledge Diagnostic (HKD) is an exam created to combat the health education problem in America. The test consists of multiple choice and yes/no questions. At its current status, the HKDT focuses on the topic of depression and mood disorders. Input either A, B, C, or D, depending on which options are available and which options you think are correct.\n"
 puts ""
 q1 = Question.new
 q1.text("If an individual's close family was diagnosed with clinical depression, would they be at greater risk of depression?")
@@ -200,7 +200,7 @@ File.open("results.md", "w+") do |file|
            file.puts("\nSimilarly to major depressive disorder, women are [more likely to be affected](https://www.nimh.nih.gov/health/topics/seasonal-affective-disorder/index.shtml#part_152432) by SAD than men, although men can still be affected. ")
         end
         unless a17
-            file.puts("\nTThe experience of individuals with SAD will [vary based off of their location](https://online.regiscollege.edu/blog/seasonal-affective-disorder/) due to differences in temperature, available light, and weather. Those with winter depression are generally happier living close to the equator, and those with summer depression will be typically happier living far from it. Other factors based off of location(such as amount of precipitation) can also affect the severity of seasonal depression.")
+            file.puts("\nThe experience of individuals with SAD will [vary based off of their location](https://online.regiscollege.edu/blog/seasonal-affective-disorder/) due to differences in temperature, available light, and weather. Those with winter depression are generally happier living close to the equator, and those with summer depression will be typically happier living far from it. Other factors based off of location(such as amount of precipitation) can also affect the severity of seasonal depression.")
         end
     end
 end
