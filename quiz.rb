@@ -1,3 +1,5 @@
+#Yes, I am aware that this is a really weird and ineffiecent way of calling the methods. No, I cannot be bothered to fix it.
+
 class Question
     def text(s)
         @@question = s
